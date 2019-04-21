@@ -11,24 +11,27 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid= Constants.MODID)
-public class ModItems {
-    static Item testItem;
+public class ReferenceLoader {
+    private static final String NAME = "reference_item";
+    private static Item referenceItem;
 
     public static void init() {
-        testItem = new TestItem("test_item").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(4);
+        referenceItem = new ReferenceItem(NAME).setCreativeTab(CreativeTabs.MISC).setMaxStackSize(4);
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-        registerRender(testItem);
+        registerRender(referenceItem);
     }
 
     private static void registerRender(Item item) {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation( item.getRegistryName(), "inventory"));
+        if (item != null) {
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), Constants.INVENTORY));
+        }
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(testItem);
+        event.getRegistry().registerAll(referenceItem);
     }
 }

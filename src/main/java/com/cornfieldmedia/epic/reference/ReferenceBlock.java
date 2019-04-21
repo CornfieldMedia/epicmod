@@ -7,12 +7,12 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TestBlock extends Block {
+public class ReferenceBlock extends Block {
     public static final String NAME = "test";
     private static final String UNLOCALIZED_NAME = "test_block";
     private static final String REGISTRY_NAME = "test_block_registry";
 
-    public TestBlock() {
+    public ReferenceBlock() {
         super(Material.ROCK);
 
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
