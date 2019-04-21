@@ -12,16 +12,19 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(modid= Constants.MODID)
 public class ReferenceLoader {
     private static Item referenceItem;
-    private static Block referenceBlock;
+    public static Block referenceBlock;
 
     public static void init() {
-        referenceItem = new ReferenceItem(ReferenceItem.NAME).setCreativeTab(CreativeTabs.MISC).setMaxStackSize(4);
-        referenceBlock = new ReferenceBlock(ReferenceBlock.NAME, Material.ROCK).setHardness(1.5f).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1.0f);
+        referenceItem = new ReferenceItem().setCreativeTab(CreativeTabs.MISC).setMaxStackSize(4);
+        referenceBlock = new ReferenceBlock(Material.ROCK, referenceItem, 2, 4).setHardness(1.5f).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1.0f);
+        referenceBlock.setHarvestLevel("pickaxe", 2);
+        GameRegistry.registerWorldGenerator(new ReferenceWorldGen(), 0);
     }
 
     @SubscribeEvent

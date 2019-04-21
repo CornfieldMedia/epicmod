@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": [
+      {
+        "item": "epicmod:reference_item",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "epicmod:reference_block",
+    "data": 0
+  }
+}

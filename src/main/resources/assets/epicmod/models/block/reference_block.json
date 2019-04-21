@@ -1,6 +1,11 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "epicmod:items/square"
+    "up": "epicmod:blocks/up",
+    "down": "epicmod:blocks/down",
+    "north": "epicmod:blocks/north",
+    "south": "epicmod:blocks/south",
+    "east": "epicmod:blocks/east",
+    "west": "epicmod:blocks/west"
   }
 }
