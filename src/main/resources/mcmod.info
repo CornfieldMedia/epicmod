@@ -1,0 +1,16 @@
+[
+{
+  "modid": "epicmod",
+  "name": "Epic Mod",
+  "description": "The only mod you need",
+  "version": "0.1",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["tigeroak"],
+  "credits": "Thanks to zrenniks, grenniks, and mrenniks",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
